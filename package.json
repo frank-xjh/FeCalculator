@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Easy Calculator",
   "scripts": {
-    "start": "electron .",
+    "start": "electron ./",
     "package": "electron-packager ./ FeCalculator --platform=win32 --arch=x64 --electron-version=2.0.7 --app-version=1.0.0 --out=./outApp --overwrite"
   },
   "main": "main.js",
@@ -16,7 +16,8 @@
   },
   "devDependencies": {
     "electron": "^2.0.7",
-    "electron-packager": "^8.7.2"
+    "electron-packager": "^12.1.0",
+    "mathjs": "^3.20.2"
   },
   "author": "frank",
   "license": "Apache-2.0"
