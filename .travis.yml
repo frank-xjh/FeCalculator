@@ -1,4 +1,4 @@
-os: mac
+os: osx
 language: node_js
 node_js:
   - '8.11.3'
@@ -16,8 +16,8 @@ before_script:
   - mkdir outApp
 
 script:
-  - npm start
-  - npm run-script package
+  - electron ./
+  - electron-packager ./ FeCalculator --all --electron-version=2.0.7 --app-version=1.0.0 --out=./outApp --overwrite
 
 after_script:
   - cd ./outApp
