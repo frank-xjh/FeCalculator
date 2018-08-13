@@ -8,8 +8,12 @@ install:
   - npm install
 
 before_script:
+  - npm install electron --save-dev
+  - npm install electron-packager --save-dev
   - npm install -g electron
   - npm install -g electron-packager
+  - npm install mathjs --save-dev
+  - npm install -g mathjs
   - mkdir outApp
 
 script:
