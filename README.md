@@ -1,2 +1,1 @@
-# FecEdit
-FecEdit,A Markdown editor
+# FeCalculator

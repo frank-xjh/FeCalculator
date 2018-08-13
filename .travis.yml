@@ -1,0 +1,30 @@
+os: linux
+dist: trusty
+language: node_js
+node_js: stable
+
+install:
+  - npm install
+
+before_script:
+  - mkdir outApp
+
+script:
+  - npm start
+  - npm run-script package
+
+after_script:
+  - cd ./outApp
+  - git init
+  - git config user.name "frank-xjh"
+  - git config user.email "frank99-xu@outlook.com"
+  - git add .
+  - git commit -m "Update docs"
+  - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:releases
+
+branches:
+  only:
+    - master
+env:
+ global:
+   - GH_REF: github.com/frank-xjh/FeCalculator.git
