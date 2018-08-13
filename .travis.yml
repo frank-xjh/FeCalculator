@@ -7,6 +7,8 @@ install:
   - npm install
 
 before_script:
+  - npm install -g electron
+  - npm install -g electron-packager
   - mkdir outApp
 
 script:
