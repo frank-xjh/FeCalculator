@@ -1,8 +1,3 @@
-/*
- * @Author: linxin 
- * @Date: 2017-08-23 11:04:01 
- * @Last Modified time: 2017-08-29 11:04:01 
- */
 const { ipcRenderer } = require('electron');
 const math = require('mathjs');
 

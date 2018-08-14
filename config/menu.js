@@ -11,7 +11,7 @@ const template = [
         label: '查看',
         submenu: [
             {
-                label: '竖屏',
+                label: '常规',
                 type: 'radio', 
                 checked: true,
                 click: () => {
@@ -21,12 +21,12 @@ const template = [
                 }
             },
             {
-                label: '横屏', 
+                label: '科学', 
                 type: 'radio', 
                 checked: false,
                 click: () => {
                     const win = BrowserWindow.fromId(1);
-                    win.setSize(670,460);
+                    win.setSize(670,480);
                     win.webContents.send('change_event','horizontal');
                 }
             },

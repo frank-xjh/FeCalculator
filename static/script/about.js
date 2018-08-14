@@ -1,8 +1,3 @@
-/*
- * @Author: linxin 
- * @Date: 2017-08-29 11:02:40 
- * @Last Modified time: 2017-08-29 11:02:40 
- */
 const { shell, remote } = require('electron');
 
 const main = {
