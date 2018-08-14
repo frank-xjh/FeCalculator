@@ -4,7 +4,16 @@
   "description": "Easy Calculator",
   "scripts": {
     "start": "electron ./",
-    "package": "electron-packager ./ FeCalculator --all --electron-version=2.0.7 --app-version=1.0.0 --out=./outApp --overwrite"
+    "package": "electron-packager ./ FeCalculator --all --electron-version=2.0.7 --app-version=1.0.0 --out=./outApp --overwrite --icon=./static/icon.ico",
+    "dist": "electron-builder -mwl"
+  },
+  "build": {
+    "appId": "com.frank.FeCalculator",
+    "copyright": "FecTok",
+    "productName": "FeCalculator",
+    "win": {
+      "icon": "./static/icon.ico"
+    }
   },
   "main": "main.js",
   "repository": {
@@ -17,7 +26,7 @@
   "devDependencies": {
     "electron": "^2.0.7",
     "electron-packager": "^12.1.0",
-    "mathjs": "^3.20.2"
+    "electron-builder": "^20.27.1"
   },
   "author": "frank",
   "license": "Apache-2.0"

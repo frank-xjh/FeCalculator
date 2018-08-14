@@ -1,23 +1,30 @@
-os: osx
 language: node_js
 node_js:
-  - '8.11.3'
+  - "8"
+  - "node"
+os:
+  - osx
+  - linuxs
+osx_image: xcode9.4
+dist: trusty
+sudo: false
 
-install:
-  - npm install
+cache:
+  directories:
+  - node_modules
+  - $HOME/.cache/electron
+  - $HOME/.cache/electron-builder
+  - $HOME/.npm/_prebuilds
 
 before_script:
-  - npm install electron --save-dev
-  - npm install electron-packager --save-dev
-  - npm install -g electron
-  - npm install -g electron-packager
-  - npm install mathjs --save-dev
-  - npm install -g mathjs
+  - npm install
   - mkdir outApp
+  - mkdir dist
 
 script:
-  - electron ./
-  - electron-packager ./ FeCalculator --all --electron-version=2.0.7 --app-version=1.0.0 --out=./outApp --overwrite
+  - npm start
+  - npm package
+  - npm dist
 
 after_script:
   - cd ./outApp
@@ -27,10 +34,18 @@ after_script:
   - git add .
   - git commit -m "Update docs"
   - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:releases
+  - cd ./dist
+  - git init
+  - git config user.name "frank-xjh"
+  - git config user.email "frank99-xu@outlook.com"
+  - git add .
+  - git commit -m "Update docs"
+  - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:releases-dist
 
 branches:
   only:
     - master
+
 env:
- global:
-   - GH_REF: github.com/frank-xjh/FeCalculator.git
+  global:
+    - GH_REF: github.com/frank-xjh/FeCalculator.git
