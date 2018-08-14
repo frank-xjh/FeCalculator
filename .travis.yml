@@ -4,7 +4,7 @@ node_js:
   - "node"
 os:
   - osx
-  - linuxs
+  - linux
 osx_image: xcode9.4
 dist: trusty
 sudo: false
@@ -18,13 +18,11 @@ cache:
 
 before_script:
   - npm install
-  - mkdir outApp
-  - mkdir dist
 
 script:
   - npm start
-  - npm package
-  - npm dist
+  - npm run-script package
+  - npm run-script dist
 
 after_script:
   - cd ./outApp

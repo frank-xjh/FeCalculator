@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Easy Calculator",
   "scripts": {
-    "start": "electron ./",
+    "start": "electron .",
     "package": "electron-packager ./ FeCalculator --all --electron-version=2.0.7 --app-version=1.0.0 --out=./outApp --overwrite --icon=./static/icon.ico",
     "dist": "electron-builder -mwl"
   },
@@ -21,7 +21,8 @@
     "url": "git@github.com:frank-xjh/FeCalculator.git"
   },
   "dependencies": {
-    "mathjs": "^3.16.2"
+    "ajv": "^6.5.2",
+    "mathjs": "^5.1.0"
   },
   "devDependencies": {
     "electron": "^2.0.7",
