@@ -85,3 +85,7 @@ It will create installer(all platform) in `./dist`
 ## License
 
 The [Apache-2.0](https://opensource.org/licenses/Apache-2.0) License
+
+> Reference documentation
+> - [Electron: 从零开始写一个记事本app](https://www.jianshu.com/p/57d910008612)
+> - [electron开发一个计算器](https://www.jianshu.com/p/4defee431782)
